@@ -13,14 +13,13 @@ class InscriptionType extends AbstractType
     {
         $builder
             ->add('username',null,array('label'=>false))
-            ->add('numTel',null,array('label'=>false))
-            ->add('firstname',null,array('label'=>false))
-            ->add('lastname',null,array('label'=>false))
-            ->add('adresse',null,array('label'=>false))
-            ->add('pays',null,array('label'=>false))
             ->add('email',null,array('label'=>false))
             ->add('password',null,array('label'=>false))
-            ->add('PhotoProfil',null,array('label'=>false))
+            ->add('firstname',null,array('label'=>false))
+            ->add('lastname',null,array('label'=>false))
+            ->add('numTel',null,array('label'=>false))
+            ->add('adresse',null,array('label'=>false))
+            ->add('pays',null,array('label'=>false))
         ;
     }
 
