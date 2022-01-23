@@ -6,19 +6,27 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
-        app_user_provider:
+        in_memory: {memory: null}
+        in_database:
             entity:
                 class: App\Entity\User
-                property: email
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: lazy
-            provider: app_user_provider
+            anonymous: true
+
+            provider: in_database
+
+            form_login:
+                login_path: connexion
+                check_path: connexion
             logout:
-                path: app_logout
+                path: deconnexion
+                target: home
+          
                 # where to redirect after logout
                 # target: app_any_route
 
