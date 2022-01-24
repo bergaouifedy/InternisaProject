@@ -1,186 +1,177 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block title %}Inscription
-{% endblock %}
+		<title>
+			{% block title %}Internisa
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+											and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
 
 
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/animate.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/fontawesome.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/flaticon.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/magnific-popup.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/slick.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/meanmenu.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/odometer.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/style.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
 
-{% block body %}
-	<!-- Titlebar
-			================================================== -->
-	<div id="titlebar" class="gradient">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
+			<link rel="icon" type="image/png" href="{{ asset('img/favicon.png')}}">
 
-					<h2>Register</h2>
 
-					<!-- Breadcrumbs -->
-					<nav id="breadcrumbs" class="dark">
-						<ul>
-							<li>
-								<a href="{{path('home')}}">Home</a>
-							</li>
-							<li>Register</li>
-						</ul>
-					</nav>
+		{% endblock %}
 
-				</div>
-			</div>
+		{% block javascripts %}
+
+
+			<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+			<script src="{{ asset('js/jquery.min.js')}}"></script>
+			<script src="{{ asset('js/popper.min.js')}}"></script>
+			<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.meanmenu.js')}}"></script>
+			<script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+			<script src="{{ asset('js/slick.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.appear.min.js')}}"></script>
+			<script src="{{ asset('js/odometer.min.js')}}"></script>
+			<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+			<script src="{{ asset('js/parallax.min.js')}}"></script>
+			<script src="{{ asset('js/wow.min.js')}}"></script>
+			<script src="{{ asset('js/form-validator.min.js')}}"></script>
+			<script src="{{ asset('js/contact-form-script.js')}}"></script>
+			<script src="{{ asset('js/main.js')}}"></script>
+
+		{% endblock %}
+
+
+	</head>
+
+
+	<div class="preloader">
+		<div class="loader">
+			<div class="shadow"></div>
+			<div class="box"></div>
 		</div>
 	</div>
 
 
-	<!-- Page Content
-			================================================== -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-5 offset-xl-3">
-
-				<div
-					class="login-register-page">
-					<!-- Welcome Text -->
-					<div class="welcome-text">
-						<h3 style="font-size: 26px;">Let's create your account!</h3>
-						<span>Already have an account?
-							<a href="{{path('connexion')}}">Log In!</a>
-						</span>
-					</div>
-
-					<!-- Account Type -->
-					<div class="account-type">
-						<div>
-							<input type="radio" name="account-type-radio" id="freelancer-radio" class="account-type-radio"/>
-							<label for="freelancer-radio" class="ripple-effect-dark">
-								<i class="icon-material-outline-account-circle"></i>
-								Freelancer</label>
-						</div>
-
-
-						<div>
-							<input type="radio" name="account-type-radio" id="employer-radio" class="account-type-radio"/>
-							<label for="employer-radio" class="ripple-effect-dark">
-								<i class="icon-material-outline-business-center"></i>
-								Employer</label>
-						</div>
-					</div>
-
-
-				</style>
-
-				<div class="Freelancer-radio">
-					<!-- Form -->
-					{{form_start(form)}}
-					<div class="input-with-icon-left">
-						<i class="icon-material-outline-account-circle"></i>
-						{{form_row(form.username,{
+	<section class="signup-area">
+		<div class="row m-0">
+			<div class="col-lg-6 col-md-12 p-0">
+				<div class="signup-image">
+					<img src="assets/img/signup-bg.jpg" alt="image">
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12 p-0">
+				<div class="signup-content">
+					<div class="d-table">
+						<div class="d-table-cell">
+							<div class="signup-form">
+								<h3>افتح الحساب الخاص بك الآن</h3>
+								<p>لديك حساب معنا؟
+									<a href="{{path('connexion')}}">صفحة الدّخول</a>
+								</p>
+								{{form_start(form)}}
+								<div class="form-group">
+									{{form_row(form.username,{
                             "attr": {
-                                "class" : "input-text with-border",
+                                "class" : "form-control",
                                 "type" : "text",
                                 "name" : "username-register",
                                 "id" : "emailaddress-register",
-                                "placeholder": "Username"
+                                "placeholder": "اسم المستخدم"
                             },
                     })}}
-					</div>
-					<div class="input-with-icon-left">
-						<i class="icon-material-baseline-mail-outline"></i>
-						{{form_row(form.email,{
+								</div>
+								<div class="form-group">
+									{{form_row(form.email,{
                             "attr": {
-                                "placeholder": "Email",
-                                "class" : "input-text with-border"
+                                "placeholder": "البريد الالكتروني",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
+								</div>
 
-					<div class="input-with-icon-left" data-tippy-placement="bottom" data-tippy="" data-original-title="Should be at least 8 characters long">
-						<i class="icon-material-outline-lock"></i>
-						{{form_row(form.password,{
+								<div class="form-group" data-tippy-placement="bottom" data-tippy="" data-original-title="Should be at least 8 characters long">
+									{{form_row(form.password,{
                             "attr": {
-                                "placeholder": "Password",
-                                "class" : "input-text with-border"
+                                "placeholder": "كلمة المرور",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
-					<div class="input-with-icon-left" data-tippy-placement="bottom" data-tippy="" data-original-title="Should be at least 8 characters long">
-						<i class="icon-material-outline-lock"></i>
-						{{form_row(form.passwordVerification,{
+								</div>
+								<div class="form-group" data-tippy-placement="bottom" data-tippy="" data-original-title="Should be at least 8 characters long">
+									{{form_row(form.passwordVerification,{
                             "attr": {
-                                "placeholder": "Password",
-                                "class" : "input-text with-border"
+                                "placeholder": "تأكيد كلمة المرور",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
+								</div>
 
 
-					<div class="input-with-icon-left">
-						<i class="icon-material-outline-assignment"></i>
-						{{form_row(form.firstname,{
+								<div class="form-group">
+									{{form_row(form.firstname,{
                             "attr": {
-                                "placeholder": "firstname",
-                                "class" : "input-text with-border"
+                                "placeholder": "الإسم",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
-					<div class="input-with-icon-left">
-						<i class="icon-material-outline-assignment"></i>
-						{{form_row(form.lastname,{
+								</div>
+								<div class="form-group">
+									{{form_row(form.lastname,{
                             "attr": {
-                                "placeholder": "Lastname",
-                                "class" : "input-text with-border"
+                                "placeholder": "اللّقب",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
-					<div class="input-with-icon-left">
-						<i class="icon-feather-phone-call"></i>
-						{{form_row(form.numTel,{
+								</div>
+								<div class="form-group">
+									{{form_row(form.numTel,{
                             "attr": {
-                                "placeholder": "numTel",
-                                "class" : "input-text with-border"
+                                "placeholder": "رقم الهاتف",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
-					<div class="input-with-icon-left">
-						<i class="icon-material-outline-add-location"></i>
-						{{form_row(form.adresse,{
+								</div>
+								<div class="form-group">
+									{{form_row(form.adresse,{
                             "attr": {
-                                "placeholder": "Adresse",
-                                "class" : "input-text with-border"
+                                "placeholder": "العنوان",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
-					<div class="input-with-icon-left">
-						<i class="icon-material-outline-add-location"></i>
-						{{form_row(form.pays,{
+								</div>
+								<div class="form-group">
+									{{form_row(form.pays,{
                             "attr": {
-                                "placeholder": "Pays",
-                                "class" : "input-text with-border"
+                                "placeholder": "البلد",
+                                "class" : "form-control"
                             },
                     })}}
-					</div>
+								</div>
 
-					{{form_widget(form)}}
-					<!-- Button -->
-					<input class="icon-material-outline-arrow-right-alt button full-width button-sliding-icon ripple-effect margin-top-10" value="register" type="submit">
-					{{form_end(form)}}
-				</div>
-				<!-- Social Login -->
-				<div class="social-login-separator">
-					<span>or</span>
-				</div>
-				<div class="social-login-buttons">
-					<button class="facebook-login ripple-effect">
-						<i class="icon-brand-facebook-f"></i>
-						Register via Facebook</button>
-					<button class="google-login ripple-effect">
-						<i class="icon-brand-google-plus-g"></i>
-						Register via Google+</button>
+								{{form_widget(form)}}
+								<!-- Button -->
+								<button type="submit" class="btn btn-primary">التّسجيل</button>
+								{{form_end(form)}}
+
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
 		</div>
-	</div>
-</div>
-<!-- Spacer -->
-<div class="margin-top-70"></div>
-<!-- Spacer / End-->{% endblock %}
+	</section>
+
+</html>

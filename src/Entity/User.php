@@ -81,6 +81,7 @@ class User implements UserInterface
 
 
      /**
+      * @ORM\Column(type="string")
      * @Assert\Length(min=5,max=10,minMessage="il faut plus de 5 caractéres",maxMessage="il faut moins de 10 caractéresé")
      * @Assert\EqualTo(propertyPath="password",message="Les mdp ne sont pas equivauts")
      */

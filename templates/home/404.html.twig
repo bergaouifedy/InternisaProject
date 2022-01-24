@@ -1,68 +1,88 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block title %}Hello HomeController!{% endblock %}
+		<title>
+			{% block title %}Internisa
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+											and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
 
-{% block body %}
 
-<!-- Titlebar
-================================================== -->
-<div id="titlebar" class="gradient">
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/animate.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/fontawesome.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/flaticon.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/magnific-popup.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/slick.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/meanmenu.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/odometer.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/style.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
+
+			<link rel="icon" type="image/png" href="{{ asset('img/favicon.png')}}">
+
+
+		{% endblock %}
+
+		{% block javascripts %}
+
+
+			<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+			<script src="{{ asset('js/jquery.min.js')}}"></script>
+			<script src="{{ asset('js/popper.min.js')}}"></script>
+			<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.meanmenu.js')}}"></script>
+			<script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+			<script src="{{ asset('js/slick.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.appear.min.js')}}"></script>
+			<script src="{{ asset('js/odometer.min.js')}}"></script>
+			<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+			<script src="{{ asset('js/parallax.min.js')}}"></script>
+			<script src="{{ asset('js/wow.min.js')}}"></script>
+			<script src="{{ asset('js/form-validator.min.js')}}"></script>
+			<script src="{{ asset('js/contact-form-script.js')}}"></script>
+			<script src="{{ asset('js/main.js')}}"></script>
+
+		{% endblock %}
+
+
+	</head>
+
+<div class="preloader">
+	<div class="loader">
+	<div class="shadow"></div>
+	<div class="box"></div>
+	</div>
+	</div>
+	
+	
+	<section class="error-area">
+	<div class="d-table">
+	<div class="d-table-cell">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-
-				<h2>404 Not Found</h2>
-
-				<!-- Breadcrumbs -->
-				<nav id="breadcrumbs" class="dark">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li>404 Not Found</li>
-					</ul>
-				</nav>
-
-			</div>
-		</div>
+	<div class="error-content">
+	<img src="/img/404.png" alt="error">
+	<h3>الصفحة غير موجودة 
+	</h3>
+	<p>ربما تمت إزالة الصفحة التي تبحث عنها وتغيير اسمها أو أنها غير متاحة مؤقتًا. 
+	</p>
+	<a href="{{path('home')}}" class="btn btn-primary">اذهب الى الصّفحة الرّئيسيّة</a>
 	</div>
-</div>
-
-<!-- Page Content
-================================================== -->
-<!-- Container -->
-<div class="container">
-
-	<div class="row">
-		<div class="col-xl-12">
-
-			<section id="not-found" class="center margin-top-50 margin-bottom-25">
-				<h2>404 <i class="icon-line-awesome-question-circle"></i></h2>
-				<p>We're sorry, but the page you were looking for doesn't exist</p>
-			</section>
-
-			<div class="row">
-				<div class="col-xl-8 offset-xl-2">
-						<div class="intro-banner-search-form not-found-search margin-bottom-50">
-							<!-- Search Field -->
-							<div class="intro-search-field ">
-								<input id="intro-keywords" type="text" placeholder="What Are You Looking For?">
-							</div>
-
-							<!-- Button -->
-							<div class="intro-search-button">
-								<button class="button ripple-effect">Search</button>
-							</div>
-						</div>
-				</div>
-			</div>
-
-		</div>
 	</div>
+	</div>
+	</div>
+	</section>
+	
+	</body>
+	
+	<!-- Mirrored from templates.envytheme.com/luvion/default/error-404.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Jun 2021 08:42:26 GMT -->
+	</html>
 
-</div>
-<!-- Container / End -->
-
-
-<!-- Spacer -->
-<div class="margin-top-70"></div>
-<!-- Spacer / End-->
-{% endblock %}

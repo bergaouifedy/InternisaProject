@@ -1,623 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>
-		{% block title %}Welcome!
+		<title>
+			{% block title %}Internisa
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle`
+					and uncomment the following Encore helpers to start using Symfony UX #}
+		{% block stylesheets %}
+
+
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/animate.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/fontawesome.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/flaticon.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/magnific-popup.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/nice-select.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/slick.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/meanmenu.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/odometer.min.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/style.css')}}">
+			<link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
+
+			<link rel="icon" type="image/png" href="{{ asset('img/favicon.png')}}">
+
+
 		{% endblock %}
-	</title>
-	{# Run `composer require symfony/webpack-encore-bundle`
-	and uncomment the following Encore helpers to start using Symfony UX #}
-	{% block stylesheets %}
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}" />
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/colors/blue.css')}}" />
+
+		{% block javascripts %}
 
 
-	<style>
-		
-		#freelancer-radio:checked  ~ .freelancer-radio {
-			display: block;
-			visibility: visible;
-		}
-	</style>
-	
-	{% endblock %}
+			<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+			<script src="{{ asset('js/jquery.min.js')}}"></script>
+			<script src="{{ asset('js/popper.min.js')}}"></script>
+			<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.meanmenu.js')}}"></script>
+			<script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+			<script src="{{ asset('js/slick.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+			<script src="{{ asset('js/jquery.appear.min.js')}}"></script>
+			<script src="{{ asset('js/odometer.min.js')}}"></script>
+			<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+			<script src="{{ asset('js/parallax.min.js')}}"></script>
+			<script src="{{ asset('js/wow.min.js')}}"></script>
+			<script src="{{ asset('js/form-validator.min.js')}}"></script>
+			<script src="{{ asset('js/contact-form-script.js')}}"></script>
+			<script src="{{ asset('js/main.js')}}"></script>
 
-	{% block javascripts %}
-
-
-	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
-	<script src="{{asset('js/jquery-migrate-3.0.0.min.js')}}"></script>
-	<script src="{{asset('js/mmenu.min.js')}}"></script>
-	<script src="{{asset('js/tippy.all.min.js')}}"></script>
-	<script src="{{asset('js/simplebar.min.js')}}"></script>
-	<script src="{{asset('js/bootstrap-slider.min.js')}}"></script>
-	<script src="{{asset('js/snackbar.js')}}"></script>
-	<script src="{{asset('js/clipboard.min.js')}}"></script>
-	<script src="{{asset('js/counterup.min.js')}}"></script>
-	<script src="{{asset('js/magnific-popup.min.js')}}"></script>
-	<script src="{{asset('js/slick.min.js')}}"></script>
-	<script src="{{asset('js/custom.js')}}"></script>
-
-	<script>
-		// Snackbar for user status switcher
-		$('#snackbar-user-status label').click(function () {
-			Snackbar.show({
-				text: 'Your status has been changed!',
-				pos: 'bottom-center',
-				showAction: false,
-				actionText: "Dismiss",
-				duration: 3000,
-				textColor: '#fff',
-				backgroundColor: '#383838'
-			});
-		});
-	</script>
-
-	<!-- Google Autocomplete -->
-	<script>
-		function initAutocomplete() {
-			var options = {
-				types: ['(cities)'],
-				// componentRestrictions: {country: "us"}
-			};
-
-			var input = document.getElementById('autocomplete-input');
-			var autocomplete = new google.maps.places.Autocomplete(input, options);
-		}
-
-		// Autocomplete adjustment for homepage
-		if ($('.intro-banner-search-form')[0]) {
-			setTimeout(function () {
-				$(".pac-container").prependTo(".intro-search-field.with-autocomplete");
-			}, 300);
-		}
-	</script>
-	{% endblock %}
+		{% endblock %}
 
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+		<div class="preloader">
+			<div class="loader">
+				<div class="shadow"></div>
+				<div class="box"></div>
+			</div>
+		</div>
 
-		<!-- Header Container
-			================================================== -->
-		{% if not app.user %}
 
-		<header id="header-container" class="fullwidth transparent">
-
-			<!-- Header -->
-			<div id="header">
+		<div class="navbar-area">
+			<div class="luvion-responsive-nav">
 				<div class="container">
-
-					<!-- Left Side Content -->
-					<div class="left-side">
-
-						<!-- Logo -->
-						<div id="logo">
-							<a href="{{path('home')}}"><img src="images/logoInternisa.jpg" alt=""></a>
-						</div>
-
-						<!-- Main Navigation -->
-						<nav id="navigation">
-							<ul id="responsive">
-
-								<li>
-									<a href="{{path('home')}}" class="current">Home</a>
-								</li>
-
-								<li>
-									<a href="#">Find Work</a>
-									<ul class="dropdown-nav">
-										<li>
-											<a href="#">Browse Jobs</a>
-										</li>
-										<li>
-											<a href="#">Browse Tasks</a>
-										</li>
-										<li>
-											<a href="browse-companies.html">Browse Companies</a>
-										</li>
-										<li>
-											<a href="single-job-page.html">Job Page</a>
-										</li>
-										<li>
-											<a href="single-task-page.html">Task Page</a>
-										</li>
-										<li>
-											<a href="single-company-profile.html">Company Profile</a>
-										</li>
-									</ul>
-								</li>
-
-								<li>
-									<a href="#">For Employers</a>
-									<ul class="dropdown-nav">
-										<li>
-											<a href="#">Find a Freelancer</a>
-										</li>
-										<li>
-											<a href="single-freelancer-profile.html">Freelancer Profile</a>
-										</li>
-										<li>
-											<a href="dashboard-post-a-job.html">Post a Job</a>
-										</li>
-										<li>
-											<a href="dashboard-post-a-task.html">Post a Task</a>
-										</li>
-									</ul>
-								</li>
-
-
-							</ul>
-						</nav>
-						<div class="clearfix"></div>
-						<!-- Main Navigation / End -->
-
-					</div>
-					<!-- Left Side Content / End -->
-
-
-					<!-- Right Side Content / End -->
-					<div class="right-side">
-
-						<div class="header-widget">
-							<a href="{{path('connexion')}}" class=" log-in-button">
-								<i class="icon-feather-log-in"></i>
-								<span>Log In / Register</span>
+					<div class="luvion-responsive-menu">
+						<div class="logo">
+							<a href="{{path('home')}}">
+								<img src="/img/logosqli.jpg" alt="logo">
+								<img src="/img/logosqli.jpg" alt="logo">
 							</a>
 						</div>
-
-
-						<!-- Mobile Navigation Button -->
-						<span class="mmenu-trigger">
-							<button class="hamburger hamburger--collapse" type="button">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
-							</button>
-						</span>
-
 					</div>
-					<!-- Right Side Content / End -->
 				</div>
 			</div>
-			<!-- Header / End -->
-
-		</header>
-		{% else %}
-		<header id="header-container" class="fullwidth transparent">
-
-			<!-- Header -->
-			<div id="header">
+			<div class="luvion-nav">
 				<div class="container">
-
-					<!-- Left Side Content -->
-					<div class="left-side">
-
-						<!-- Logo -->
-						<div id="logo">
-							<a href="#"><img src="images/logoInternisa.jpg" alt=""></a>
-						</div>
-
-						<!-- Main Navigation -->
-						<nav id="navigation">
-							<ul id="responsive">
-
-								<li>
-									<a href="#" class="current">Home</a>
+					<nav class="navbar navbar-expand-md navbar-light">
+						<a class="navbar-brand" href="{{path('home')}}">
+							<img src="/img/logosqli.jpg" width="100px" alt="logo">
+							<img src="/img/logosqli.jpg" width="100px" alt="logo">
+						</a>
+						<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+							<ul class="navbar-nav">
+								<li class="nav-item">
+									<a href="#" class="nav-link active">الصّفحة الرّئيسيّة
+									</a>
 								</li>
-
-								<li>
-									<a href="#">Find Work</a>
-									<ul class="dropdown-nav">
-										<li>
-											<a href="#">Browse Jobs</a>
+								
+								<li class="nav-item">
+									<a href="#" class="nav-link">باحث عن عمل؟
+										<i class="fas fa-chevron-down"></i>
+									</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item">
+											<a href="#" class="nav-link">تصفّح الوظائف</a>
 										</li>
-										<li>
-											<a href="#">Browse Tasks</a>
+										<li class="nav-item">
+											<a href="#" class="nav-link">تصفّح الأعمال الحرّة</a>
 										</li>
-										<li>
-											<a href="browse-companies.html">Browse Companies</a>
-										</li>
-										<li>
-											<a href="single-job-page.html">Job Page</a>
-										</li>
-										<li>
-											<a href="single-task-page.html">Task Page</a>
-										</li>
-										<li>
-											<a href="single-company-profile.html">Company Profile</a>
+										<li class="nav-item">
+											<a href="#" class="nav-link">تصفّح الشّركات</a>
 										</li>
 									</ul>
 								</li>
-
-								<li>
-									<a href="#">For Employers</a>
-									<ul class="dropdown-nav">
-										<li>
-											<a href="#">Find a Freelancer</a>
+								
+								<li class="nav-item">
+									<a href="#" class="nav-link">صاحب عمل ؟
+										<i class="fas fa-chevron-down"></i>
+									</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item">
+											<a href="#" class="nav-link">ابحث عن عامل مستقل</a>
 										</li>
-										<li>
-											<a href="single-freelancer-profile.html">Freelancer Profile</a>
+										<li class="nav-item">
+											<a href="#" class="nav-link">أعلن عن وظيفة</a>
 										</li>
-										<li>
-											<a href="dashboard-post-a-job.html">Post a Job</a>
-										</li>
-										<li>
-											<a href="dashboard-post-a-task.html">Post a Task</a>
+										<li class="nav-item">
+											<a href="#" class="nav-link">طلب عمل مستقل</a>
 										</li>
 									</ul>
 								</li>
-
-
+								<li class="nav-item">
+									<a href="#" class="nav-link">اتصل بنا</a>
+								</li>
 							</ul>
-						</nav>
-						<div class="clearfix"></div>
-						<!-- Main Navigation / End -->
+							{% if not app.user %}
 
-					</div>
-					<!-- Left Side Content / End -->
-
-
-					<!-- Right Side Content / End -->
-					<div class="right-side">
-
-						<!--  User Notifications -->
-						<div class="header-widget hide-on-mobile">
-
-							<!-- Notifications -->
-							<div class="header-notifications">
-
-								<!-- Trigger -->
-								<div class="header-notifications-trigger">
-									<a href="#">
-										<i class="icon-feather-bell"></i>
-										<span>0</span>
-									</a>
-								</div>
-
-								<!-- Dropdown -->
-								<div class="header-notifications-dropdown">
-
-									<div class="header-notifications-headline">
-										<h4>Notifications</h4>
-										<button class="mark-as-read ripple-effect-dark" title="Mark all as read"
-											data-tippy-placement="left">
-											<i class="icon-feather-check-square"></i>
-										</button>
-									</div>
-
-									<div class="header-notifications-content">
-										<div class="header-notifications-scroll" data-simplebar>
-											<ul>
-												<!-- Notification -->
-												<li class="notifications-not-read">
-													<a href="dashboard-manage-candidates.html">
-														<span class="notification-icon">
-															<i class="icon-material-outline-group"></i>
-														</span>
-														<span class="notification-text">
-															<strong>Michael Shannah</strong>
-															applied for a job
-															<span class="color">Full Stack Software Engineer</span>
-														</span>
-													</a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-
-								</div>
-
+							<div class="others-options">
+								<a href="{{path('connexion')}}" class="login-btn">
+									<i class="flaticon-user"></i>
+									دخول</a>
 							</div>
+							{% else %}
+							
+							<div class="others-options">
+								<ul class="navbar-nav">
+									<li class="nav-item">
+										<a href="#" class="nav-link">الملف الشخصي 
 
-							<!-- Messages -->
-							<div class="header-notifications">
-								<div class="header-notifications-trigger">
-									<a href="#">
-										<i class="icon-feather-mail"></i>
-										<span>0</span>
-									</a>
-								</div>
-
-								<!-- Dropdown -->
-								<div class="header-notifications-dropdown">
-
-									<div class="header-notifications-headline">
-										<h4>Messages</h4>
-										<button class="mark-as-read ripple-effect-dark" title="Mark all as read"
-											data-tippy-placement="left">
-											<i class="icon-feather-check-square"></i>
-										</button>
-									</div>
-
-									<div class="header-notifications-content">
-										<div class="header-notifications-scroll" data-simplebar>
-											<ul>
-												<!-- Notification -->
-												<li class="notifications-not-read">
-													<a href="dashboard-messages.html">
-														<span class="notification-avatar status-online"><img
-																src="images/user-avatar-small-03.jpg" alt=""></span>
-														<div class="notification-text">
-															<strong>David Peterson</strong>
-															<p class="notification-msg-text">Thanks for reaching out.
-																I'm quite busy right now on many...</p>
-															<span class="color">4 hours ago</span>
-														</div>
-													</a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-
-									<a href="dashboard-messages.html"
-										class="header-notifications-button ripple-effect button-sliding-icon">View All
-										Messages<i class="icon-material-outline-arrow-right-alt"></i>
-									</a>
-								</div>
+											<i class="fas fa-chevron-down"></i>
+										</a>
+										<ul class="dropdown-menu">
+											<li class="nav-item">
+												<a href="#" class="nav-link">تصفّح المعلومات الخاصة</a>
+											</li>
+											
+											<li class="nav-item">	
+												<a href="{{path('deconnexion')}}" class="nav-link login-btn">
+													<i class="flaticon-user" style="color: red;"></i>
+													تسجيل الخروج</a>
+											</li>
+										</ul>
+									</li>
+								
+								</ul>
 							</div>
-
+							{% endif %}
 						</div>
-						<!--  User Notifications / End -->
-
-						<!-- User Menu -->
-						<div class="header-widget">
-
-							<!-- Messages -->
-							<div class="header-notifications user-menu">
-								<div class="header-notifications-trigger">
-									<a href="#">
-										<div class="user-avatar status-online"><img
-												src="images/user-avatar-small-01.jpg" alt=""></div>
-									</a>
-								</div>
-
-								<!-- Dropdown -->
-								<div class="header-notifications-dropdown">
-
-									<!-- User Status -->
-									<div class="user-status">
-
-										<!-- User Name / Avatar -->
-										<div class="user-details">
-											<div class="user-avatar status-online"><img
-													src="images/user-avatar-small-01.jpg" alt=""></div>
-											<div class="user-name">
-												{{app.user.username}}
-												<span>Freelancer</span>
-											</div>
-										</div>
-
-										<!-- User Status Switcher -->
-										<div class="status-switch" id="snackbar-user-status">
-											<label class="user-online current-status">Online</label>
-											<label class="user-invisible">Invisible</label>
-											<!-- Status Indicator -->
-											<span class="status-indicator" aria-hidden="true"></span>
-										</div>
-									</div>
-
-									<ul class="user-menu-small-nav">
-										<li>
-											<a href="dashboard-settings.html">
-												<i class="icon-material-outline-settings"></i>
-												Update Profile</a>
-										</li>
-										<li>
-											<a href="index-logged-out.html">
-												<i class="icon-material-outline-power-settings-new"></i>
-												Logout</a>
-										</li>
-									</ul>
-
-								</div>
-							</div>
-
-						</div>
-						<!-- User Menu / End -->
-
-						<!-- Mobile Navigation Button -->
-						<span class="mmenu-trigger">
-							<button class="hamburger hamburger--collapse" type="button">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
-							</button>
-						</span>
-
-					</div>
-					<!-- Right Side Content / End -->
-
+					</nav>
 				</div>
 			</div>
-			<!-- Header / End -->
+		</div>
 
-		</header>
-		{% endif %}
-
-		<!-- Header Container / End -->
-		<div class="clearfix"></div>
+		
 
 
 		{% block body %}{% endblock %}
 
-
-		<!-- Footer
-							================================================== -->
-		<div id="footer">
-
-			<!-- Footer Top Section -->
-			<div class="footer-top-section">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-12">
-
-							<!-- Footer Rows Container -->
-							<div class="footer-rows-container">
-
-								<!-- Left Side -->
-								<div class="footer-rows-left">
-									<div class="footer-row">
-										<div class="footer-row-inner footer-logo">
-											<img src="images/logo2.png" alt="">
-										</div>
-									</div>
-								</div>
-
-								<!-- Right Side -->
-								<div class="footer-rows-right">
-
-									<!-- Social Icons -->
-									<div class="footer-row">
-										<div class="footer-row-inner">
-											<ul class="footer-social-links">
-												<li>
-													<a href="#" title="Facebook" data-tippy-placement="bottom"
-														data-tippy-theme="light">
-														<i class="icon-brand-facebook-f"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#" title="Twitter" data-tippy-placement="bottom"
-														data-tippy-theme="light">
-														<i class="icon-brand-twitter"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#" title="Google Plus" data-tippy-placement="bottom"
-														data-tippy-theme="light">
-														<i class="icon-brand-google-plus-g"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#" title="LinkedIn" data-tippy-placement="bottom"
-														data-tippy-theme="light">
-														<i class="icon-brand-linkedin-in"></i>
-													</a>
-												</li>
-											</ul>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-
-									<!-- Language Switcher -->
-									<div class="footer-row">
-										<div class="footer-row-inner">
-											<select class="selectpicker language-switcher"
-												data-selected-text-format="count" data-size="5">
-												<option selected>English</option>
-												<option>Français</option>
-												<option>Español</option>
-												<option>Deutsch</option>
-											</select>
-										</div>
-									</div>
-								</div>
-
+		<footer class="footer-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+							<div class="logo">
+								<a href="index.html"><img src="assets/img/black-logo.png" alt="logo"></a>
+								<p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra maecenas accumsan lacus vel facilisis.</p>
 							</div>
-							<!-- Footer Rows Container / End -->
+							<ul class="social-links">
+								<li>
+									<a href="#" target="_blank">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<i class="fab fa-instagram"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<i class="fab fa-linkedin-in"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+							<h3>Company</h3>
+							<ul class="list">
+								<li>
+									<a href="about.html">About Us</a>
+								</li>
+								<li>
+									<a href="features-2.html">Services</a>
+								</li>
+								<li>
+									<a href="features-1.html">Features</a>
+								</li>
+								<li>
+									<a href="pricing.html">Our Pricing</a>
+								</li>
+								<li>
+									<a href="blog-1.html">Latest News</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+							<h3>Support</h3>
+							<ul class="list">
+								<li>
+									<a href="faq.html">FAQ's</a>
+								</li>
+								<li>
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="#">Terms & Condition</a>
+								</li>
+								<li>
+									<a href="#">Community</a>
+								</li>
+								<li>
+									<a href="contact.html">Contact Us</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+							<h3>Address</h3>
+							<ul class="footer-contact-info">
+								<li>
+									<span>Location:</span>
+									27 Division St, New York, NY 10002, USA</li>
+								<li>
+									<span>Email:</span>
+									<a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#e38b868f8f8ca38f96958a8c8dcd808c8e">
+										<span class="__cf_email__" data-cfemail="8ce4e9e0e0e3cce0f9fae5e3e2a2efe3e1">[email&#160;protected]</span>
+									</a>
+								</li>
+								<li>
+									<span>Phone:</span>
+									<a href="tel:+321984754">+ (321) 984 754</a>
+								</li>
+								<li>
+									<span>Fax:</span>
+									<a href="tel:+12129876543">+1-212-9876543</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- Footer Top Section / End -->
-
-			<!-- Footer Middle Section -->
-			<div class="footer-middle-section">
-				<div class="container">
-					<div class="row">
-
-						<!-- Links -->
-						<div class="col-xl-2 col-lg-2 col-md-3">
-							<div class="footer-links">
-								<h3>For Candidates</h3>
-								<ul>
-									<li><a href="#"><span>Browse Jobs</span></a></li>
-									<li><a href="#"><span>Add Resume</span></a></li>
-									<li><a href="#"><span>Job Alerts</span></a></li>
-									<li><a href="#"><span>My Bookmarks</span></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Links -->
-						<div class="col-xl-2 col-lg-2 col-md-3">
-							<div class="footer-links">
-								<h3>For Employers</h3>
-								<ul>
-									<li><a href="#"><span>Browse Candidates</span></a></li>
-									<li><a href="#"><span>Post a Job</span></a></li>
-									<li><a href="#"><span>Post a Task</span></a></li>
-									<li><a href="#"><span>Plans & Pricing</span></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Links -->
-						<div class="col-xl-2 col-lg-2 col-md-3">
-							<div class="footer-links">
-								<h3>Helpful Links</h3>
-								<ul>
-									<li><a href="#"><span>Contact</span></a></li>
-									<li><a href="#"><span>Privacy Policy</span></a></li>
-									<li><a href="#"><span>Terms of Use</span></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Links -->
-						<div class="col-xl-2 col-lg-2 col-md-3">
-							<div class="footer-links">
-								<h3>Account</h3>
-								<ul>
-									<li><a href="#"><span>Log In</span></a></li>
-									<li><a href="#"><span>My Account</span></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Newsletter -->
-						<div class="col-xl-4 col-lg-4 col-md-12">
-							<h3>
-								<i class="icon-feather-mail"></i>
-								Sign Up For a Newsletter
-							</h3>
-							<p>Weekly breaking news, analysis and cutting edge advices on job searching.</p>
-							<form action="#" method="get" class="newsletter">
-								<input type="text" name="fname" placeholder="Enter your email address">
-								<button type="submit">
-									<i class="icon-feather-arrow-right"></i>
-								</button>
-							</form>
-						</div>
-					</div>
+				<div class="copyright-area">
+					<p>Copyright © 2021 Luvion is proudly created by
+						<a href="https://envytheme.com/" target="_blank">
+							EnvyTheme</a>
+					</p>
 				</div>
 			</div>
-			<!-- Footer Middle Section / End -->
+			<div class="map-image"><img src="assets/img/map.png" alt="map"></div>
+		</footer>
 
-			<!-- Footer Copyrights -->
-			<div class="footer-bottom-section">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-12">
-							© 2018
-							<strong>Hireo</strong>. All Rights Reserved.
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Footer Copyrights / End -->
-
+		<div class="go-top">
+			<i class="fas fa-arrow-up"></i>
 		</div>
-</body>
+
+	</body>
 
 </html>
