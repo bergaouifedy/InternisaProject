@@ -68,9 +68,7 @@
 	<section class="signup-area">
 		<div class="row m-0">
 			<div class="col-lg-6 col-md-12 p-0">
-				<div class="signup-image">
-					<img src="assets/img/signup-bg.jpg" alt="image">
-				</div>
+					<img src="/img/2.png" height="100%" alt="image">
 			</div>
 			<div class="col-lg-6 col-md-12 p-0">
 				<div class="signup-content">
@@ -80,12 +78,12 @@
 								<div class="logo">
 									<a href="{{path('home')}}"><img src="img/logosqli.jpg" width="100px" alt="image"></a>
 								</div>
-								<h3>افتح الحساب الخاص بك الآن</h3>
+								<h3>افتح الحساب الخاص بك كمشغّل الآن</h3>
 								<p>لديك حساب معنا؟
-									<a href="{{path('connexion')}}" style="color: red; ">صفحة الدّخول</a>
+									<a href="{{path('connexion')}}" style="color: red;">صفحة الدّخول</a>
 								</p>
-								<p>أو افتح حساب من نوع المشغّل
-									<a href="{{path('inscriptionRecruteur')}}" style="color: red;">من هنا</a>
+								<p>أو افتح حساب من نوع الباحث عن عمل
+									<a href="{{path('inscription')}}" style="color: red;">من هنا</a>
 								</p>
 								{{form_start(form)}}
 								<div class="form-group">
@@ -162,6 +160,14 @@
 									{{form_row(form.pays,{
                             "attr": {
                                 "placeholder": "البلد",
+                                "class" : "form-control"
+                            },
+                    })}}
+								</div>
+								<div class="form-group">
+									{{form_row(form.secteur,{
+                            "attr": {
+                                "placeholder": "القطاع",
                                 "class" : "form-control"
                             },
                     })}}

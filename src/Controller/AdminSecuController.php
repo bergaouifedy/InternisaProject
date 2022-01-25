@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Recruteur;
 use App\Entity\User;
 use App\Form\InscriptionType;
+use App\Form\RecruteurType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Persistence\ManagerRegistry;
@@ -29,11 +31,38 @@ class AdminSecuController extends AbstractController
         {
             $passwordCrypt=$encoder->encodePassword($utilisateur,$utilisateur->getPassword());
             $utilisateur->setPassword($passwordCrypt);
+
+            $roles[] = 'ROLE_USER';
+            $utilisateur->setRoles($roles);
+
             $manager->getManager()->persist($utilisateur);
             $manager->getManager()->flush();
             return $this->redirectToRoute("home");
         } 
         return $this->render('admin_secu/inscription.html.twig',[
+            "form" => $form->createView()
+        ]);
+    }
+
+     /**
+     * @Route("/inscriptionRecruteur", name="inscriptionRecruteur")
+     */
+    public function inscrRecruteur(Request $request,ManagerRegistry $manager,UserPasswordEncoderInterface $encoder)
+    {
+        $utilisateur = new Recruteur();
+        $form = $this->createForm(RecruteurType::class,$utilisateur);
+        $form->handleRequest($request);
+        if($form->isSubmitted()&& ($form->isValid()))
+        {
+            $passwordCrypt=$encoder->encodePassword($utilisateur,$utilisateur->getPassword());
+            $utilisateur->setPassword($passwordCrypt);
+            $roles[] = 'ROLE_RECRUTEUR';
+            $utilisateur->setRoles($roles);
+            $manager->getManager()->persist($utilisateur);
+            $manager->getManager()->flush();
+            return $this->redirectToRoute("home");
+        } 
+        return $this->render('admin_secu/inscriptionRecruteur.html.twig',[
             "form" => $form->createView()
         ]);
     }

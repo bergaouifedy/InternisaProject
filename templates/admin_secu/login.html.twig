@@ -82,12 +82,12 @@
 								</div>
 								<h3>مرحبا بك مجدّدا</h3>
 								<p>جديد معنا؟
-									<a href="{{path('inscription')}}">تسجيل حساب جديد</a>
+									<a href="{{path('inscription')}}" style="color: red;">تسجيل حساب جديد</a>
 								</p>
 								{% if error %}
 
 									<div class="notification error closeable">
-										Les inoformations sont incorrectes
+										المعلومات التي أدخلتها غير صحيحة
 									</div>
 								{% endif %}
 								<form action="{{path('connexion')}}" method="post" id="login-form">
