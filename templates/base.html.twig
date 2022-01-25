@@ -92,7 +92,13 @@
 									<a href="#" class="nav-link active">الصّفحة الرّئيسيّة
 									</a>
 								</li>
-								
+
+								<li class="nav-item">
+									<a href="#" class="nav-link active">جميع خدماتنا
+									</a>
+								</li>
+								{% if app.user %}
+								{% if is_granted("ROLE_USER") %}
 								<li class="nav-item">
 									<a href="#" class="nav-link">باحث عن عمل؟
 										<i class="fas fa-chevron-down"></i>
@@ -109,7 +115,9 @@
 										</li>
 									</ul>
 								</li>
-								
+								{% endif %}
+								{% if is_granted("ROLE_RECRUTEUR") %}
+
 								<li class="nav-item">
 									<a href="#" class="nav-link">صاحب عمل ؟
 										<i class="fas fa-chevron-down"></i>
@@ -126,6 +134,9 @@
 										</li>
 									</ul>
 								</li>
+								{% endif %}
+
+								{% endif %}
 								<li class="nav-item">
 									<a href="#" class="nav-link">اتصل بنا</a>
 								</li>
